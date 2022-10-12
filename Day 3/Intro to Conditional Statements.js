@@ -22,4 +22,11 @@ function readLine() {
 
 function main() {
     const N = parseInt(readLine().trim(), 10);
+    let result = '';
+    if (N % 2 === 0) {
+        (N >= 6 && N <= 20) ? result = 'Weird' : result = 'Not Weird';
+    } else {
+        result = 'Weird'
+    }
+    console.log(result);
 }
