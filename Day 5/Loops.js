@@ -23,4 +23,9 @@ function readLine() {
 
 function main() {
     const n = parseInt(readLine().trim(), 10);
+    let m = 0;
+  for( let i = 1; i<=10; i++){
+    m = i * n
+    console.log(n+" x "+i+" = "+m);
+  }
 }
