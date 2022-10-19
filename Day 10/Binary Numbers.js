@@ -22,4 +22,6 @@ function readLine() {
 
 function main() {
     const n = parseInt(readLine().trim(), 10);
+    const baseTwon = Math.Max(...n.toString(2).split(0)).toString().length;
+    console.log(baseTwon);
 }
