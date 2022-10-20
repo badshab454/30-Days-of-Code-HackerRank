@@ -52,4 +52,3 @@ for(var v = 0 ; v < arrayRaw.length - 2 ; v++){
 
 console.log(Math.max(...arrayHourglassSum));
 }
-}
