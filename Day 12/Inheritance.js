@@ -1,12 +1,30 @@
 class Student extends Person {
-    constructor(firstName, lastName, id, scores) {
-        super(firstName, lastName, id)
-        this.scores = scores
-    }
 
-    calculate() {
-        const grades = 'OEAPDT', scale = [90, 80, 70, 55, 40, 0]
-        const avg = this.scores.reduce((sum, s) => sum + s) / this.scores.length
-        return grades[scale.map(s => avg >= s).findIndex(s => s)]
-    }
+	constructor(firstName, lastName, identification, scores) {
+		super(firstName, lastName, identification);
+		this.testScores = scores;
+	}
+
+	calculate() {
+		let average = this.testScores.reduce(
+			function (a, b) {
+				return a + b
+			},
+			0
+		) / this.testScores.length
+
+		if (average >= 90) {
+			return 'O'
+		} else if (average >= 80) {
+			return 'E'
+		} else if (average >= 70) {
+			return 'A'
+		} else if (average >= 55) {
+			return 'P'
+		} else if (average >= 40) {
+			return 'D'
+		} else {
+			return 'T'
+		}
+	}
 }
