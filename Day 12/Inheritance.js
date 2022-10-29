@@ -1,53 +1,19 @@
 class Student extends Person {
-    /*	
-    *   Class Constructor
-    *   
-    *   @param firstName - A string denoting the Person's first name.
-    *   @param lastName - A string denoting the Person's last name.
-    *   @param id - An integer denoting the Person's ID number.
-    *   @param scores - An array of integers denoting the Person's test scores.
-    */
-    // Write your constructor here
+    constructor(firstName, lastName, idNumber, scores) {
+        super(firstName,lastName,idNumber);
+        this.scores = scores
+    }
 
-    /*	
-    *   Method Name: calculate
-    *   @return A character denoting the grade.
-    */
-    // Write your method here
-    constructor(
-        firstName, 
-        lastName, 
-        identification,
-        scores
-    ) {
-        super(
-        firstName, 
-        lastName, 
-        identification
-        );
-        this.scores = scores;
-    }
-    
-    calculate() {
-        let sum = this.scores.reduce((pre,next) => {
-            return pre + next
-        }, 0)
-        
-        if (averageSorce >= 90 && averageSorce <= 100) {
-            return 'O';
-        } else if (averageSorce >= 80 && averageSorce < 90) {
-            return 'E';
-        } else if(averageSorce >= 70 && averageSorce < 80) {
-            return 'A';
-        } else if(averageSorce >= 55 && averageSorce < 70) {
-            return 'P';
-        } else if (averageSorce >= 40 && averageSorce < 50) {
-            return 'D';
-        } else {
-            return 'T';
-        }
-    }
-    
+  calculate() {
+    const average = this.scores.reduce(this.getSum, 0) / this.scores.length;
+    if (average >= 90) return 'O';
+    if (average >= 80) return 'E';
+    if (average >= 70) return 'A';
+    if (average >= 55) return 'P';
+    if (average >= 40) return 'D';
+    if (average < 40) return 'T';
+  }
+  getSum(total, num) {
+    return (total += num);
+  }
 }
-        
-    }
