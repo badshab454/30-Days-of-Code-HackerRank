@@ -1,19 +1,12 @@
 class Student extends Person {
-    constructor(firstName, lastName, idNumber, scores) {
-        super(firstName,lastName,idNumber);
+    constructor(firstName, lastName, id, scores) {
+        super(firstName, lastName, id)
         this.scores = scores
     }
 
-  calculate() {
-    const average = this.scores.reduce(this.getSum, 0) / this.scores.length;
-    if (average >= 90) return 'O';
-    if (average >= 80) return 'E';
-    if (average >= 70) return 'A';
-    if (average >= 55) return 'P';
-    if (average >= 40) return 'D';
-    if (average < 40) return 'T';
-  }
-  getSum(total, num) {
-    return (total += num);
-  }
+    calculate() {
+        const grades = 'OEAPDT', scale = [90, 80, 70, 55, 40, 0]
+        const avg = this.scores.reduce((sum, s) => sum + s) / this.scores.length
+        return grades[scale.map(s => avg >= s).findIndex(s => s)]
+    }
 }
