@@ -14,5 +14,41 @@ class Student extends Person {
     *   @return A character denoting the grade.
     */
     // Write your method here
+    class Student extends Person {
     
+        constructor(
+            firstName, 
+            lastName, 
+            identification,
+            scores
+        ) {
+            super(
+            firstName, 
+            lastName, 
+            identification
+            );
+            this.scores = scores;
+        }
+        
+        calculate() {
+            let sum = this.scores.reduce((pre,next) => {
+                return pre + next
+            }, 0)
+            
+            if (averageSorce >= 90 && averageSorce <= 100) {
+                return 'O';
+            } else if (averageSorce >= 80 && averageSorce < 90) {
+                return 'E';
+            } else if(averageSorce >= 70 && averageSorce < 80) {
+                return 'A';
+            } else if(averageSorce >= 55 && averageSorce < 70) {
+                return 'P';
+            } else if (averageSorce >= 40 && averageSorce < 50) {
+                return 'D';
+            } else {
+                return 'T';
+            }
+        }
+        
+    }
 }
