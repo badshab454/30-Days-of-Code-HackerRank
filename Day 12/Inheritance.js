@@ -14,9 +14,7 @@ class Student extends Person {
     *   @return A character denoting the grade.
     */
     // Write your method here
-    class Student extends Person {
-    
-        constructor(
+      constructor(
             firstName, 
             lastName, 
             identification,
@@ -51,4 +49,3 @@ class Student extends Person {
         }
         
     }
-}
